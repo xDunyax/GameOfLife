@@ -1,0 +1,186 @@
+﻿<h1>Conways Game of Life</h1>
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">Es soll Conways Game of Life simuliert werden. Schreiben Sie dazu ein passendes Programm in JAVA. Die Regeln entnehmen Sie bitte dem angegebenen Wikipedia Artikel.</p>
+
+<h2 style="color: black; background-image: none; margin: 1em 0px 0.25em; overflow: hidden; padding: 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(170, 170, 170); font-family: 'Linux Libertine', Georgia, Times, serif; line-height: 1.3;"><span class="mw-headline" id="Die_Spielregeln">Die Spielregeln</span><span class="mw-editsection" style="-webkit-user-select: none; font-size: small; margin-left: 1em; vertical-align: baseline; line-height: 1em; display: inline-block; white-space: nowrap; unicode-bidi: -webkit-isolate; font-family: sans-serif;"><span class="mw-editsection-bracket" style="margin-right: 0px; color: rgb(85, 85, 85); margin-left: 0px;">[</span><a href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;" title="Zum Artikel: Game of Life">Zum Artikel</a><span class="mw-editsection-bracket" style="margin-left: 0px; color: rgb(85, 85, 85); margin-right: 0px;">]</span></span></h2>
+
+<p style="margin-top: 0.5em; margin-right: 0px; margin-left: 0px; line-height: 22px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">Die Folgegeneration wird f&uuml;r alle Zellen gleichzeitig berechnet und ersetzt die aktuelle&nbsp;<a href="http://de.wikipedia.org/wiki/Generation" style="text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;" title="Generation">Generation</a>. Der Zustand einer Zelle,&nbsp;<i>lebendig</i>&nbsp;oder&nbsp;<i>tot</i>, in der Folgegeneration h&auml;ngt nur vom Zustand der acht Nachbarzellen dieser Zelle in der aktuellen Generation ab.</p>
+
+<p style="margin-top: 0.5em; margin-right: 0px; margin-left: 0px; line-height: 22px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">Die von Conway zu Anfang verwendeten Regeln sind:</p>
+
+<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=); color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">
+	<li style="margin-bottom: 0.1em;">Eine tote Zelle mit genau drei lebenden Nachbarn wird in der Folgegeneration neu geboren.</li>
+</ul>
+
+<table cellspacing="17" style="font-size: 14px; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 17px; margin-left: 17px;">
+	<tbody>
+		<tr>
+			<td width="54">
+			<table border="1" cellpadding="0" style="height: 55px; border-collapse: collapse; border: 2px solid rgb(0, 0, 0);" width="100%">
+				<tbody>
+					<tr>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td style="background-color: red;">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22px;">
+	<dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;">
+	<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin: 0px; list-style-type: none; list-style-image: none; text-indent: -1.5em;"><span style="border-left-width: 1.2em; border-left-style: solid; border-left-color: red; padding-left: 0.4em;" title="Rot">﻿</span>rot: Tote Zelle, die in der n&auml;chsten Generation geboren wird</li>
+	</ul>
+	</dd>
+	<dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;">
+	<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin: 0px; list-style-type: none; list-style-image: none; text-indent: -1.5em;"><span style="border-left-width: 1.2em; border-left-style: solid; border-left-color: lime; padding-left: 0.4em;" title="Hellgr&uuml;n">﻿</span>gr&uuml;n: Lebende Nachbarn der Zelle</li>
+	</ul>
+	</dd>
+</dl>
+
+<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=); color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">
+	<li style="margin-bottom: 0.1em;">Lebende Zellen mit weniger als zwei lebenden Nachbarn sterben in der Folgegeneration an Einsamkeit.</li>
+</ul>
+
+<table cellspacing="17" style="font-size: 14px; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 17px; margin-left: 17px;">
+	<tbody>
+		<tr>
+			<td width="54">
+			<table border="1" cellpadding="0" style="height: 55px; border-collapse: collapse; border: 2px solid rgb(0, 0, 0);" width="100%">
+				<tbody>
+					<tr>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td style="background-color: fuchsia;">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=); color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">
+	<li style="margin-bottom: 0.1em;">Eine lebende Zelle mit zwei oder drei lebenden Nachbarn bleibt in der Folgegeneration am Leben.</li>
+</ul>
+
+<table cellspacing="17" style="font-size: 14px; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 17px; margin-left: 17px;">
+	<tbody>
+		<tr>
+			<td width="54">
+			<table border="1" cellpadding="0" style="height: 55px; border-collapse: collapse; border: 2px solid rgb(0, 0, 0);" width="100%">
+				<tbody>
+					<tr>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+						<td width="33%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: fuchsia;">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=); color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">
+	<li style="margin-bottom: 0.1em;">Lebende Zellen mit mehr als drei lebenden Nachbarn sterben in der Folgegeneration an &uuml;berbev&ouml;lkerung.</li>
+</ul>
+
+<table cellspacing="17" style="font-size: 14px; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 17px; margin-left: 17px;">
+	<tbody>
+		<tr>
+			<td width="54">
+			<table border="1" cellpadding="0" style="height: 55px; border-collapse: collapse; border: 2px solid rgb(0, 0, 0);" width="100%">
+				<tbody>
+					<tr>
+						<td style="background-color: lime;" width="33%">&nbsp;</td>
+						<td style="background-color: lime;" width="33%">&nbsp;</td>
+						<td style="background-color: lime;" width="33%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: fuchsia;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+						<td style="background-color: lime;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-top: 0.5em; margin-right: 0px; margin-left: 0px; line-height: 22px; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px;">&nbsp;</p>
+
+<dl style="margin-top: 0.2em; margin-bottom: 0.5em; color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; line-height: 22px;">
+	<dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;">
+	<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin: 0px; list-style-type: none; list-style-image: none; text-indent: -1.5em;"><span style="border-left-width: 1.2em; border-left-style: solid; border-left-color: fuchsia; padding-left: 0.4em;" title="Violett">﻿</span>magenta: Lebende Zelle, die betrachtet wird</li>
+	</ul>
+	</dd>
+	<dd style="line-height: 1.5em; margin-left: 1.6em; margin-bottom: 0.1em; margin-right: 0px;">
+	<ul style="line-height: 1.5em; margin: 0.3em 0px 0px 1.6em; padding-right: 0px; padding-left: 0px; list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAANAQMAAABb8jbLAAAABlBMVEX///8AUow5QSOjAAAAAXRSTlMAQObYZgAAABNJREFUCB1jYEABBQw/wLCAgQEAGpIDyT0IVcsAAAAASUVORK5CYII=);">
+		<li style="margin: 0px; list-style-type: none; list-style-image: none; text-indent: -1.5em;"><span style="border-left-width: 1.2em; border-left-style: solid; border-left-color: lime; padding-left: 0.4em;" title="Hellgr&uuml;n">﻿</span>gr&uuml;n: Lebende Nachbarn der Zelle</li>
+	</ul>
+	</dd>
+</dl>
+
+<p>&nbsp;</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">In einem ersten Schritt w&auml;hlen Sie ein Spielfeld der Gr&ouml;ße 40x40. Legen Sie die die Gr&ouml;ße des Spielfeldes mit den Konstanten X_SIZE und Y_SIZE fest. Das Spielfeld soll durch ein int-Array der Gr&ouml;ße X_SIZE x Y_SIZE realisiert werden. &nbsp;</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">Die linke untere Ecke des Spielfeldes stellt den Koordinatenursprung mit den Koordinaten (x=0, y=0)&nbsp;dar. Die Koordinaten werden immer angegeben in der Reihenfolge (x,y).</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">Beim Spielfeld handelt es sich um eine sogenannte Donut-World. Das heißt der linke Rand grenzt an den rechten Rand an und der untere Rand an den oberen. Dies ist auch bei der Berechnung der Anzahl der Nachbarn zu ber&uuml;cksichtigen.&nbsp;</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">In der ersten Version des Programms werden die einzelnen Runden auf der Konsole ausgegegen. Dazu dient die Methode&nbsp;showGrid().</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">In einem zweiten Schritt sollen die Bildschirmausgaben mit Hilfe der Klasse VisualGameOfLife grafisch dargestellt werden. Dazu diese Klasse einfach ihrem Projekt hinzuf&uuml;gen. Die Verwendung dieser Klasse geschieht im wesentlichen durch die refresh-Methode. Schauen Sie sich bitte die main-Methode von VisualGrid an.</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">Zum Testen ihrer Klasse sollten Sie zwei Testf&auml;lle vorbereiten.</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;"><strong>Testfall 1 - Glider</strong></p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">Erzeugen Sie eine Struktur, die &uuml;ber den gesamten Bildschirm wandert. Auf diese Weise testen Sie auch die Eigenschaften ihrer Feldgrenzen.</p>
+
+<p span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;"><strong>Testfall 2 - Muster mit begrenzter Lebensdauer</strong></p>
+
+<p><span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 21px;">In dem entsprechenden Wikipedia Artikel ist ein Muster erw&auml;hnt, das z.B. innerhalb von 54 Generationen eine leere Welt erzeugen. Dies ist eine guter Testfall, da sie damit gut die Logik ihres Programmes &uuml;berpr&uuml;fen k&ouml;nnen.</span></p>
