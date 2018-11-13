@@ -6,10 +6,6 @@
 
 public class GameOfLife implements IGameOfLife {
 
-    {
-
-    }
-
     @Override
     public void init() {
 
